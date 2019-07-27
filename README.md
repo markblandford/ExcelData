@@ -8,7 +8,7 @@ With a reference added to ExcelData.dll in a project it can be used as follows:
 1. Create a Class to represent the data of a worksheet within a workbook.
 2. Decorate the Class with the `[ExcelDataSheetName]` attribute where the `SheetName` parameter is the name of the Excel Worksheet:
 
-```
+```csharp
   [ExcelDataSheetName("Security Distribution")]
   Public Class Valuation
   {
@@ -18,7 +18,7 @@ With a reference added to ExcelData.dll in a project it can be used as follows:
 
 3. Add properties to the Class to represent each column you wish to import from the Excel worksheet. Each property should be decorated with the `ExcelDataColumn` attribute where the `Column` parameter is the column letter:
 
-```
+```csharp
   [ExcelDataSheetName("Security Distribution")]
   internal class Valuation
   {
@@ -37,7 +37,7 @@ In combination with setting `UseFirstRowHeaders = true`, it is possible to speci
 
 4. To import the Excel data, create a new instance of the `Import` object. `Import` implements `IDisposable` and it is advised to use it with a `Using` statement:
 
-```
+```csharp
   using ExcelData;
 
   public class Test
